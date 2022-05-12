@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Container } from "react-bootstrap";
+import { Row , Col} from "react-bootstrap";
 import "./ItemCard.css";
 
 const ItemCard = ({ item }) => {
@@ -39,33 +40,57 @@ const ItemCard = ({ item }) => {
 
   return (
     <>
-      <Card style={{ width: "12rem" }}>
-        <Card.Img variant="top" src={image} />
-        <h5>{name}</h5>
-        <p>{price}</p>
+      
+
+      <div className="contenedor">
+
+      <Card style={{ width: "350px" }} className="imagen" border="light">
+        
+        <Card.Img variant="top" src={image}  />
+      
         <Card.Body>
-          <Button variant="dark" className="buttons" onClick={discCount}>
-            -
-          </Button>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>
+            This is a longer card with supporting text below as a natural
+            lead-in to additional content. This content is a little bit longer.
+          </Card.Text>
+          <p className="precio"> ${price}</p>
+        
           <p className="text">{count}</p>
-          <Button variant="dark" className="buttons" onClick={incrementCount}>
-            +
-          </Button>
+         
+
+          <div>
+    <Button variant="primary" size="sm" className="buttons" onClick={discCount}>
+      -
+    </Button>{' '}
+<Button variant="primary" size="sm" className="buttons" onClick={incrementCount}>
+     +
+    </Button>
+  </div>
           <div>
             <Button variant="dark" onClick={addToCart}>
-              Agregar al carrito
+              <h5> Agregar al carrito</h5>
             </Button>
+            
           </div>
 
-          <p className="text">el stock es : {stock}</p>
+         
 
           <div>
-            <Button variant="dark" onClick={renewStock}>
+            <Button className="r2" variant="dark" onClick={renewStock}>
               Renovar stock
             </Button>
           </div>
         </Card.Body>
+        <Card.Footer>
+        <p className="text"> stock  : {stock}</p>
+    </Card.Footer>
       </Card>
+      </div>
+ 
+  
+
+
     </>
   );
 };
