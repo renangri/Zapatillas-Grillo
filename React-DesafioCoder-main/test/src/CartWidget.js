@@ -6,10 +6,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; //aca me importo la clase icono de font awesome.
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons"; //aca me traigo el icono que necesito.
 
+
 const CartWidget = () => {
   return (
     <div>
-      <a href="#">
+      <a href="home">
         <FontAwesomeIcon className="cart" icon={faCartShopping} />
       </a>
     </div>

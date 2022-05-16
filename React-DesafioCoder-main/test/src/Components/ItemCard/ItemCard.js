@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Button, Card, Container } from "react-bootstrap";
-import { Row , Col} from "react-bootstrap";
+import { Button, Card,  } from "react-bootstrap";
 import "./ItemCard.css";
 
 const ItemCard = ({ item }) => {
@@ -36,7 +35,7 @@ const ItemCard = ({ item }) => {
     setStock((stock) => (stock = 10));
   }
 
-  const { name, price, image } = item;
+  const { name, price, image, Description } = item;
 
   return (
     <>
@@ -51,8 +50,7 @@ const ItemCard = ({ item }) => {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
-            This is a longer card with supporting text below as a natural
-            lead-in to additional content. This content is a little bit longer.
+            {Description}
           </Card.Text>
           <p className="precio"> ${price}</p>
         
